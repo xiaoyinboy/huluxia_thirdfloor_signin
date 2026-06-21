@@ -1,7 +1,7 @@
 name: huluxia_signin
 on:
   schedule:    # 定时触发
-    - cron: '30 0 * * *'  # 24点
+    - cron: '0 16 * * *'  # UTC16点 = 北京时间凌晨00:00（24点）
   workflow_dispatch:  # 支持手动触发
 jobs:
   build:
@@ -20,8 +20,13 @@ jobs:
       - name: '开始运行'
         id: signin-outputs
         env:
-          # 不需要的推送形式可以直接注释，反之你需要取消注释            
-          none: ${{ secrets.NOTIFIER_TYPE }} 
-          ACCOUNTS: ${{ secrets.ACCOUNTS }}
+          # 邮箱账号配置（直接粘贴你的JSON）
+          ACCOUNTS: |
+            {
+                "username": "616836@qq.com",
+                "auth_code_or_password": "qqzaxjftraucbjig",
+                "sender_email": "616836@qq.com",
+                "recipient_email": "616836@qq.com"
+            }
         run: |
           python ./main.py
