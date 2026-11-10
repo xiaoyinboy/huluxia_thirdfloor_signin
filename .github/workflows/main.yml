@@ -1,4 +1,7 @@
 name: huluxia_signin
+permissions:
+  contents: write
+  actions: read
 on:
   schedule:    # 定时触发
     - cron: '0 16 * * *'  # 24点
