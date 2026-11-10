@@ -24,7 +24,7 @@ jobs:
 
       - name: 开始运行
         env:
-          NOTIFIER_TYPE: ${{ secrets.NOTIFIER_TYPE }}
+          # NOTIFIER_TYPE: ${{ secrets.NOTIFIER_TYPE }}
            EMAIL_CONFIG: ${{ secrets.EMAIL_CONFIG }}
           # WECHAT_ROBOT_URL: ${{ secrets.WECHAT_ROBOT_URL }}
           ACCOUNTS: ${{ secrets.ACCOUNTS }}
